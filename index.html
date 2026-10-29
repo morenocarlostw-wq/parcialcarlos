@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitoreo de lluvia</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <div class="marca" aria-hidden="true">☁</div>
+    <p class="etiqueta">CVC · GESTIÓN AMBIENTAL</p>
+    <h1>Monitoreo de lluvia</h1>
+    <p class="descripcion">Ingresa para registrar y consultar las mediciones de precipitación.</p>
+    <div class="campo">
+      <label for="usuario">Usuario</label>
+      <input id="usuario" placeholder="Tu usuario" autocomplete="username">
+    </div>
+    <div class="campo">
+      <label for="clave">Contraseña</label>
+      <input id="clave" type="password" placeholder="Tu contraseña" autocomplete="current-password">
+    </div>
+    <button onclick="iniciarSesion()">Ingresar</button>
+  </div>
+
+  <!-- PANEL PRINCIPAL -->
+  <div id="panel" class="oculto">
+    <header class="encabezado">
+      <p class="etiqueta">CVC · GESTIÓN AMBIENTAL</p>
+      <h1>Registro de lluvia</h1>
+      <p class="descripcion">Completa los datos de la medición para consultar su resultado.</p>
+    </header>
+
+    <div class="formulario">
+      <div class="campo campo-completo">
+        <label for="direccion">Dirección de la zona</label>
+        <input id="direccion" placeholder="Ej. Vereda El Porvenir">
+      </div>
+      <div class="campo">
+        <label for="inicio">Hora de inicio</label>
+        <input id="inicio" type="time">
+      </div>
+      <div class="campo">
+        <label for="fin">Hora de fin</label>
+        <input id="fin" type="time">
+      </div>
+      <div class="campo">
+        <label for="mm">Precipitación</label>
+        <input id="mm" type="number" placeholder="0" min="0" step="any">
+        <span class="ayuda">Milímetros (mm)</span>
+      </div>
+      <div class="campo">
+        <label for="nombre">Nombre de quien registra</label>
+        <input id="nombre" placeholder="Nombre completo">
+      </div>
+      <button class="campo-completo" onclick="registrar()">Registrar medición</button>
+    </div>
+
+    <p id="reloj" role="status" aria-live="polite"></p>
+    <p id="resultado" role="status" aria-live="polite"></p>
+
+    <section class="grafica-seccion" aria-labelledby="titulo-grafica">
+      <h2 id="titulo-grafica">Precipitaciones registradas</h2>
+      <p class="descripcion">Comparación de las mediciones con el estándar de 14 mm.</p>
+      <canvas id="grafica" width="500" height="250" aria-label="Gráfica de precipitaciones registradas"></canvas>
+    </section>
+  </div>
+
+  <script src="/JS/codigo.js"></script>
+</body>
+</html>
