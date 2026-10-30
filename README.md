@@ -5,8 +5,8 @@ Aplicación web hecha con HTML, CSS y JavaScript para registrar la lluvia de zon
 ## Archivos
 
 - `index.html`: estructura de la página
-- `estilos.css`: diseño
-- `script.js`: lógica del sistema
+- `style.css`: diseño
+- `codigo.js`: lógica del sistema
 
 ## Cómo usarlo
 
